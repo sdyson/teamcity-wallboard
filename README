@@ -1,0 +1,36 @@
+Description
+===========
+This is a plugin for TeamCity by Jetbrains to provide a build status wallboard.
+
+How To Install
+==============
+
+Download the latest version of the plugin from:
+https://github.com/sdyson/teamcity-wallboard/downloads
+
+To install the plugin place wallboard.zip into the .BuildServer/plugins
+directory and restart TeamCity server.
+
+How to Use
+==========
+Point your web browser at:
+http://<teamcity.server>/wallboard.html
+
+How to Build
+============
+To build the plugin, first create a <user.name>.properties file and override
+appropriate properties from build.properties.
+
+Run 'ant dist' to produce the zipped plugin or 'ant deploy' to deploy directly
+to your local TeamCity installation.
+
+License
+=======
+
+Apache License 2.0
+
+
+Author
+======
+
+Simon Dyson (sdyson@themaelstrom.co.uk)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:shemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>Wallboard</name>
+    <display-name>Wallboard</display-name>
+    <version>@version@</version>
+    <description>Build status wallboard for TeamCity</description>
+
+    <vendor>
+      <name>Simon Dyson</name>
+      <url>http://github.com/sdyson/teamcity-wallboard</url>
+    </vendor>
+  </info>
+</teamcity-plugin>
