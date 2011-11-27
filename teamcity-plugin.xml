@@ -2,7 +2,7 @@
 <teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:shemas-jetbrains-com:teamcity-plugin-v1-xml">
   <info>
-    <name>Wallboard</name>
+    <name>wallboard</name>
     <display-name>Wallboard</display-name>
     <version>@version@</version>
     <description>Build status wallboard for TeamCity</description>
