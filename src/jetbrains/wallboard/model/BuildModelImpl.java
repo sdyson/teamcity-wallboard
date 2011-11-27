@@ -39,7 +39,7 @@ public class BuildModelImpl implements BuildModel
 
     public Date getBuildDate()
     {
-        SFinishedBuild finishedBuild = buildType.getLastChangesSuccessfullyFinished();
+        SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
         return finishedBuild != null ? finishedBuild.getFinishDate() : null;
     }
     
@@ -47,7 +47,7 @@ public class BuildModelImpl implements BuildModel
     {
         if(getActive())
         {
-            SFinishedBuild finishedBuild = buildType.getLastChangesSuccessfullyFinished();
+            SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
             return finishedBuild != null ? finishedBuild.getBuildStatus().getText().toLowerCase() : null;
         }
         else

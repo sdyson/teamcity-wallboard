@@ -26,7 +26,10 @@ public class ProjectModelImpl implements ProjectModel
         this.project = project;
         for(SBuildType buildType : project.getBuildTypes())
         {
-            builds.add(new BuildModelImpl(buildType));
+            if(buildType.getLastChangesFinished() != null)
+            {
+                builds.add(new BuildModelImpl(buildType));
+            }
         }
     }
 

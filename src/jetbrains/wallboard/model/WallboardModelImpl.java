@@ -24,9 +24,13 @@ public class WallboardModelImpl implements WallboardModel
     public WallboardModelImpl(ProjectManager projectManager)
     {
         this.projectManager = projectManager;
-        for(SProject sProject : projectManager.getProjects())
+        for(SProject project : projectManager.getActiveProjects())
         {
-            projects.add(new ProjectModelImpl(sProject));
+            ProjectModelImpl projectModel = new ProjectModelImpl(project);
+            if(projectModel.getBuilds().size() > 0)
+            {
+                projects.add(projectModel);
+            }
         }
     }
 
