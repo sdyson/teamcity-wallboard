@@ -20,6 +20,9 @@
                                 <div class="build build-${build.status}">
                                     <div class="build-name">${build.name}</div>
                                     <div class="build-date"><fmt:formatDate value="${build.buildDate}" pattern="dd MMM yy HH:mm"/></div>
+                                    <c:if test="${!build.active}">
+                                        <div class="build-paused">(paused)</div>
+                                    </c:if>
                                     <c:if test="${!empty build.responsible}">
                                         <div class="build-responsible">${build.responsible}</div>
                                     </c:if>

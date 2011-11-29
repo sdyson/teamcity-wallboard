@@ -61,11 +61,13 @@ a {
     bottom: 5px;
 }
 
+.build .build-paused,
 .build .build-responsible {
     font-weight: normal;
     font-size: 1.1em;
     color: #ccc;
     display: block;
+    margin-top: 0.5em;
 }
 
 .build.build-success .build-status {
