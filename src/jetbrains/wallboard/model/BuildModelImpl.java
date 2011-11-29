@@ -4,7 +4,6 @@
  */
 package jetbrains.wallboard.model;
 
-import jetbrains.buildServer.messages.Status;
 import jetbrains.buildServer.responsibility.ResponsibilityEntry;
 import jetbrains.buildServer.serverSide.ResponsibilityInfo;
 import jetbrains.buildServer.serverSide.SBuildType;
@@ -45,15 +44,8 @@ public class BuildModelImpl implements BuildModel
     
     public String getStatus()
     {
-        if(getActive())
-        {
-            SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
-            return finishedBuild != null ? finishedBuild.getBuildStatus().getText().toLowerCase() : null;
-        }
-        else
-        {
-            return Status.UNKNOWN.getText().toLowerCase();
-        }
+        SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
+        return finishedBuild != null ? finishedBuild.getBuildStatus().getText().toLowerCase() : null;
     }
     
     public Boolean getActive()
