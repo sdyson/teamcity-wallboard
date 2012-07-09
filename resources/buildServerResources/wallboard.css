@@ -113,3 +113,7 @@ a {
 .build.build-error {
     background: #AF0E01;
 }
+
+.build.build-failure.build-has-responsible {
+    background: #C47003;
+}

@@ -17,7 +17,11 @@
                     <div class="project-builds">
                         <c:forEach items="${project.builds}" var="build">
                             <%--<c:if test="${build.active}">--%>
-                                <div class="build build-${build.status}">
+                                <c:set var="class" value="build build-${build.status}"/>
+                                <c:if test="${!empty build.responsible}">
+                                    <c:set var="class" value="${class} build-has-responsible"/>
+                                </c:if>
+                                <div class="${class}">
                                     <div class="build-name">${build.name}</div>
                                     <div class="build-date"><fmt:formatDate value="${build.buildDate}" pattern="dd MMM yy HH:mm"/></div>
                                     <c:if test="${!build.active}">
