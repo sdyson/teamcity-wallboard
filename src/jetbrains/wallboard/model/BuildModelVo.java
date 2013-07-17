@@ -19,6 +19,10 @@ public class BuildModelVo implements BuildModel
     private String status = Status.NORMAL.getText().toLowerCase();
     private Boolean active = true;
     private String responsible = null;
+    private String timeBroken;
+    private Status buildStatus;
+    private String pendingChanges;
+    private boolean running;
 
 // --------------------------- CONSTRUCTORS ---------------------------
 
@@ -38,9 +42,19 @@ public class BuildModelVo implements BuildModel
         this.buildDate = buildDate;
     }
 
+    public void setBuildStatus(Status buildStatus)
+    {
+        this.buildStatus = buildStatus;
+    }
+
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public void setPendingChanges(String pendingChanges)
+    {
+        this.pendingChanges = pendingChanges;
     }
 
     public void setResponsible(String responsible)
@@ -48,9 +62,19 @@ public class BuildModelVo implements BuildModel
         this.responsible = responsible;
     }
 
+    public void setRunning(boolean running)
+    {
+        this.running = running;
+    }
+
     public void setStatus(String status)
     {
         this.status = status;
+    }
+
+    public void setTimeBroken(String timeBroken)
+    {
+        this.timeBroken = timeBroken;
     }
 
 // ------------------------ INTERFACE METHODS ------------------------
@@ -81,5 +105,25 @@ public class BuildModelVo implements BuildModel
     public String getResponsible()
     {
         return responsible;
+    }
+
+    public String getTimeBroken()
+    {
+        return timeBroken;
+    }
+
+    public Status getBuildStatus()
+    {
+        return buildStatus;
+    }
+
+    public String getPendingChanges()
+    {
+        return pendingChanges;
+    }
+
+    public boolean isRunning()
+    {
+        return running;
     }
 }

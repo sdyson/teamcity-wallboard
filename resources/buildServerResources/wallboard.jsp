@@ -23,9 +23,18 @@
                                 </c:if>
                                 <div class="${classes}">
                                     <div class="build-name">${build.name}</div>
-                                    <div class="build-date"><fmt:formatDate value="${build.buildDate}" pattern="dd MMM yy HH:mm"/></div>
+                                    <%--<div class="build-date"><fmt:formatDate value="${build.buildDate}" pattern="dd MMM yy HH:mm"/></div>--%>
+                                    <c:if test="${build.buildStatus.failed}">
+                                        <div class="build-time-broken">${build.timeBroken}</div>
+                                    </c:if>
+                                    <c:if test="${!empty build.pendingChanges}">
+                                        <div class="build-pending-changes">${build.pendingChanges}</div>
+                                    </c:if>
+                                    <c:if test="${build.running}">
+                                        <div class="build-running">&#x25B6;</div>
+                                    </c:if>
                                     <c:if test="${!build.active}">
-                                        <div class="build-paused">(paused)</div>
+                                        <div class="build-paused">&#x25FC;</div>
                                     </c:if>
                                     <c:if test="${!empty build.responsible}">
                                         <div class="build-responsible">${build.responsible}</div>

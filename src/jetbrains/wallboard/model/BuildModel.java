@@ -4,6 +4,8 @@
  */
 package jetbrains.wallboard.model;
 
+import jetbrains.buildServer.messages.Status;
+
 import java.util.Date;
 
 /**
@@ -21,4 +23,12 @@ public interface BuildModel
     Boolean getActive();
 
     String getResponsible();
+
+    String getTimeBroken();
+
+    Status getBuildStatus();
+
+    String getPendingChanges();
+
+    boolean isRunning();
 }
