@@ -5,7 +5,6 @@
 package jetbrains.wallboard.model;
 
 import jetbrains.buildServer.responsibility.ResponsibilityEntry;
-import jetbrains.buildServer.serverSide.ResponsibilityInfo;
 import jetbrains.buildServer.serverSide.SBuildType;
 import jetbrains.buildServer.serverSide.SFinishedBuild;
 
@@ -41,13 +40,13 @@ public class BuildModelImpl implements BuildModel
         SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
         return finishedBuild != null ? finishedBuild.getFinishDate() : null;
     }
-    
+
     public String getStatus()
     {
         SFinishedBuild finishedBuild = buildType.getLastChangesFinished();
         return finishedBuild != null ? finishedBuild.getBuildStatus().getText().toLowerCase() : null;
     }
-    
+
     public Boolean getActive()
     {
         return !buildType.isPaused();
@@ -55,7 +54,7 @@ public class BuildModelImpl implements BuildModel
     
     public String getResponsible()
     {
-        ResponsibilityInfo responsibilityInfo = buildType.getResponsibilityInfo();
+        ResponsibilityEntry responsibilityInfo = buildType.getResponsibilityInfo();
         ResponsibilityEntry.State state = responsibilityInfo.getState();
         if(state.isActive() || state.isFixed())
         {
